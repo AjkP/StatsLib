@@ -1,0 +1,9 @@
+dnl $Id: config.m4 256977 2008-04-08 16:13:17Z sfox $
+dnl config.m4 for extension stats
+
+PHP_ARG_ENABLE(stats, whether to enable stats support,
+[  --enable-stats           Enable statistics support])
+
+if test "$PHP_STATS" != "no"; then
+  PHP_NEW_EXTENSION(stats, php_stats.c com.c dcdflib.c ipmpar.c linpack.c randlib.c , $ext_shared)
+fi
