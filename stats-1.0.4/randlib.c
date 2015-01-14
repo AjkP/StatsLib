@@ -759,7 +759,7 @@ void gsrgs(long getset,long *qvalue)
 **********************************************************************
 */
 {
-long qinit = 0;
+static long qinit = 0;
 
     if(getset == 0) *qvalue = qinit;
     else qinit = *qvalue;
@@ -776,7 +776,7 @@ void gssst(long getset,long *qset)
 **********************************************************************
 */
 {
-long qstate = 0;
+static long qstate = 0;
     if(getset != 0) qstate = 1;
     else  *qset = qstate;
 }
