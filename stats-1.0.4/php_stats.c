@@ -395,7 +395,7 @@ PHP_FUNCTION(stats_cdf_t)
 
 /* {{{ proto float stats_stat_gennch(float par1, float par2, float par3, int which)
 	Calculates any one parameter of the normal distribution given values for thee others. */
-PHP_FUNCTION(stats_stat_gennch) 
+PHP_FUNCTION(stats_cdf_normal) 
 {
 	double arg1;
 	double arg2;
@@ -2248,7 +2248,7 @@ PHP_FUNCTION(stats_rand_setall)
 
 /* {{{ proto array stats_rand_get_seeds(void)
 	Not documented */
-PHP_FUNCTION(stats_rand_get_seeds) 
+PHP_FUNCTION(stats_rand_getsd) 
 {
 	long iseed_1;
 	long iseed_2;
@@ -2310,7 +2310,7 @@ PHP_FUNCTION(stats_rand_gen_funiform)
 
 /* {{{ proto int stats_rand_gen_int(void)
   Generates random integer between 1 and 2147483562 */
-PHP_FUNCTION(stats_rand_gen_int)
+PHP_FUNCTION(stats_rand_ignlgi)
 {
 	if (ZEND_NUM_ARGS() != 0) {
 		WRONG_PARAM_COUNT;
@@ -2432,7 +2432,7 @@ PHP_FUNCTION(stats_rand_gen_gamma)
 
 /* {{{ proto float stats_rand_gen_noncenral_chisquare(float df, float xnonc)
 	Generates random deviate from the distribution of a noncentral chisquare with "df" degrees of freedom and noncentrality parameter "xnonc". d must be >= 1.0, xnonc must >= 0.0 */
-PHP_FUNCTION(stats_rand_gen_noncenral_chisquare)
+PHP_FUNCTION(stats_rand_gen_noncentral_chisquare)
 {
 	double df;
 	double xnonc;
@@ -2452,7 +2452,7 @@ PHP_FUNCTION(stats_rand_gen_noncenral_chisquare)
 
 /* {{{ proto float stats_rand_gen_noncentral_f(float dfn, float dfd, float xnonc)
 	Generates a random deviate from the noncentral F (variance ratio) distribution with "dfn" degrees of freedom  in the numerator, and "dfd" degrees of freedom in the denominator, and noncentrality parameter "xnonc". Method : directly generates ratio of noncentral numerator chisquare variate to central denominator chisquare variate. */
-PHP_FUNCTION(stats_rand_gen_noncentral_f)
+PHP_FUNCTION(stats_rand_gen_noncenral_f)
 {
 	double dfn;
 	double dfd;
@@ -2517,7 +2517,7 @@ PHP_FUNCTION(stats_rand_phrase_to_seeds)
 
 /* {{{ proto int stats_rand_gen_ibinomial(int n, float pp)
 	Generates a single random deviate from a binomial distribution whose number of trials is "n" (n >= 0) and whose probability of an event in each trial is "pp" ([0;1]). Method : algorithm BTPE */
-PHP_FUNCTION(stats_rand_gen_ibinomial)
+PHP_FUNCTION(stats_rand_ibinomial)
 {
 	long n;
 	double pp;
@@ -2537,7 +2537,7 @@ PHP_FUNCTION(stats_rand_gen_ibinomial)
 
 /* {{{ proto int stats_rand_gen_ibinomial_negative(int n, float p)
 	Generates a single random deviate from a negative binomial distribution. Arguments : n - the number of trials in the negative binomial distribution from which a random deviate is to be generated (n > 0), p - the probability of an event (0 < p < 1)). */
-PHP_FUNCTION(stats_rand_gen_ibinomial_negative)
+PHP_FUNCTION(stats_rand_ibinomial_negative)
 {
 	long n;
 	double p;
@@ -3009,7 +3009,7 @@ PHP_FUNCTION(stats_dens_pmf_poisson)
 
 /* {{{ proto float stats_dens_negative_binomial(float x, float n, float pi)
 	Not documented */
-PHP_FUNCTION(stats_dens_negative_binomial)
+PHP_FUNCTION(stats_dens_pmf_negative_binomial)
 {
 	double pi;
 	double y;
@@ -3407,7 +3407,7 @@ PHP_FUNCTION(stats_stat_binomial_coef)
 
 /* {{{ proto float stats_stat_gennch(int n)
 	Not documented */
-PHP_FUNCTION(stats_stat_gennch)
+PHP_FUNCTION(stats_stat_factorial)
 {
 	int n;
 	int i;
